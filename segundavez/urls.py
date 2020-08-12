@@ -15,7 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
+    path('', views.home, name="home"),
+    path('empleados/', views.empleados, name="empleados"),
+    path('horario/', views.horario, name="horario"),
+    path('modificacion/', views.modificacion, name="modificacion"),
+    path('asistencia/', views.asistencia, name="asistencia"),
+    path('modificaciona/', views.modificaciona, name="modificaciona"),
+    path('modificaciona/', views.modificaciona, name="modificaciona"),
+    path('reporte/', views.reporte, name="reporte"),
+    path('vacaciones/', views.vacaciones, name="vacaciones"),
     path('admin/', admin.site.urls),
+    path('registro/', views.registro_docente, name='registro_docente'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
